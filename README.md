@@ -8,8 +8,13 @@ Sweet Alert Library written in C# mapping the JavaScript function
                 Path = SweetAlertValues.NoPath,
                 Title = SweetAlertValues.Title.Success,
                 Message = "Operation completed",
-                CssClass = SweetAlertValues.Css.Success
+                CssClass = SweetAlertValues.Css.Success,
+                ExSwalRules = new ExtendedSweetAlertRules()
+                {
+                    ConfirmButtonColor = "Red"
+                }
             };
 
-            Page.ClientScript.RegisterStartupScript(GetType(), JavascriptCodeIdentifier.SHOW_ALERT_DIALOG, SweetAlerter.EmbedSweetAlertCodeBlock(Swal), true);
+            Page.ClientScript.RegisterStartupScript(GetType(), 
+            JavascriptCodeIdentifier.SHOW_ALERT_DIALOG, SweetAlerter.EmbedSweetAlertCodeBlock(Swal), true);
         }
